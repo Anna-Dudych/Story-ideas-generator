@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Генератор</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Головна</a>
+  <a href="generator.html">Генератор</a>
+  <a href="help.html">Інструкція</a>
+  <a href="team.html">Команда</a>
+</nav>
+
+<section class="section">
+
+<h1>🎯 Розширений генератор</h1>
+
+<div class="generator glass">
+
+<!-- НАЛАШТУВАННЯ -->
+<div class="settings">
+
+<select id="category">
+  <option value="all">Категорія: всі</option>
+  <option value="life">Життя</option>
+  <option value="fun">Розваги</option>
+  <option value="study">Навчання</option>
+</select>
+
+<select id="mood">
+  <option value="any">Настрій: будь-який</option>
+  <option value="happy">Веселий</option>
+  <option value="chill">Спокійний</option>
+  <option value="active">Активний</option>
+</select>
+
+<select id="type">
+  <option value="any">Тип: будь-який</option>
+  <option value="video">Відео</option>
+  <option value="photo">Фото</option>
+  <option value="interactive">Інтерактив</option>
+</select>
+
+</div>
+
+<button onclick="generateMultiple()">Згенерувати 3 ідеї 🚀</button>
+
+<!-- ВИВІД -->
+<div id="ideasContainer" class="ideas"></div>
+
+</div>
+
+<!-- ІСТОРІЯ -->
+<div class="panels">
+<div class="panel glass">
+  <h3>Історія</h3>
+  <button onclick="clearHistory()">Очистити</button>
+  <ul id="historyList"></ul>
+</div>
+
+<div class="panel glass">
+  <h3>Обране</h3>
+  <button onclick="clearSaved()">Очистити</button>
+  <ul id="savedList"></ul>
+</div>
+</div>
+
+</section>
+
+<script src="main.js"></script>
+</body>
+</html>
