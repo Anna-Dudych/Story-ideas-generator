@@ -1,4 +1,3 @@
-// БАЗА
 const starts = ["Покажи", "Зніми", "Зроби", "Поділись"];
 const topics = ["свій день", "свій ранок", "своє навчання", "улюблену музику"];
 const endings = ["з музикою 🎵", "з опитуванням 📊", "креативно ✨", "з питанням 🤔"];
@@ -15,11 +14,9 @@ const types = {
   interactive: ["з інтерактивом 📊"]
 };
 
-// STORAGE
 let history = JSON.parse(localStorage.getItem("history")) || [];
 let saved = JSON.parse(localStorage.getItem("saved")) || [];
 
-// ГЕНЕРАЦІЯ 1 ІДЕЇ
 function buildIdea() {
   const start = rand(starts);
   const topic = rand(topics);
@@ -36,7 +33,6 @@ function buildIdea() {
   return `${start} ${topic} ${ending}${extra}`;
 }
 
-// ГЕНЕРАЦІЯ 3
 function generateMultiple() {
   const container = document.getElementById("ideasContainer");
   container.innerHTML = "";
@@ -83,7 +79,6 @@ function generateMultiple() {
   renderHistory();
 }
 
-// HISTORY
 function addToHistory(idea) {
   history.unshift(idea);
   history = history.slice(0, 10);
@@ -102,7 +97,6 @@ function renderHistory() {
   });
 }
 
-// SAVED
 function saveIdea(idea) {
   if (!saved.includes(idea)) {
     saved.push(idea);
@@ -140,12 +134,10 @@ function renderSaved() {
   });
 }
 
-// UTILS
 function rand(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-// INIT
 window.onload = () => {
   renderHistory();
   renderSaved();
